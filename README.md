@@ -75,7 +75,7 @@ If you try access a method that not exist, API will return 404 - Not Found respo
 
 # Autentication
 
-By default, autentication is disabled, but you can enable adding a method named authorize to your controller. All requests will call that method first. If authorize() returns false, the server will issue a 401 Unauthorized response. If authorize() returns true, the request continues on to call the correct controller action. All actions will run the authorization first unless you add @noAuth in the action's docs (I usually put it above the @url mappings).
+By default, autentication is disabled, but you can enable it adding a method named authorize to your controller. All requests will call that method first. If authorize() returns false, the server will issue a 401 Unauthorized response. If authorize() returns true, the request continues on to call the correct controller action. All actions will run the authorization first unless you add @noAuth in the action's docs (I usually put it above the @url mappings).
 Inside your authentication method you can use PHP's getallheaders function or $_COOKIE depending on how you want to authorize your users.
 
 
