@@ -15,12 +15,10 @@ Support the following formats :
 Just put files .htaccess and PowerfulAPI.php into directory that you'd like to work with API and enjoy it :)
 
 # Configuration
-You need tell to Powerful API where are your controller files. For this, edit api.php adding you controller's classes like in the sample:
+You need tell to Powerful API where are your controller files (wherever they are). For this, edit api.php adding you controller's classes like in the sample:
 
 ```php
 <?php
-
-//spl_autoload_register(); // don't load our classes unless we use them
 
 require 'PowerfulAPI.php';
 require 'controllers/TestController.php';
@@ -32,7 +30,46 @@ $server->addClass('TestController');
 $server->addClass('Test2Controller');
 $server->handle();
 ```
+# Routing
+Is too easy to add routes and they are informed in controllers just adding a documentation tag --@url--
 
+You need tell to Powerful API where are your controller files (wherever they are). For this, edit api.php adding you controller's classes like this samples:
+
+* Adding a GET route to /home
+```php
+    /**
+     * @url GET /home
+     */
+    public function test()
+    {
+        return "Home API";
+    }
+```
+
+* Adding a GET route with variable id ($id) to /home/1
+Variable name can be whatever you want
+```php
+    /**
+     * @url GET /home/$id
+     */
+    public function home($id)
+    {
+        return $id;
+    }
+```
+
+* Adding a POST route to /home/save
+```php
+    /**
+     * @url GET /home/save
+     */
+    public function save()
+    {
+        // TO DO
+        //Save data
+    }
+```
+If you try access a method that not exist, API will return 404 - Not Found response.
 
 
 Authentication is unique for each application. But tying your authentication mechanisms into RestServer is easy. By simply adding a method named authorize to your Controller all requests will call that method first. If authorize() returns false, the server will issue a 401 Unauthorized response. If authorize() returns true, the request continues on to call the correct controller action. All actions will run the authorization first unless you add @noAuth in the action's docs (I usually put it above the @url mappings).
