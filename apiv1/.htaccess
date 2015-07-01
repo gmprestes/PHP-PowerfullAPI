@@ -1,0 +1,7 @@
+# Apache needs to let you overrite this (AllowOverride Indexes or AllowOverride All)
+
+DirectoryIndex index.php
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^.*$ api.php [QSA,L]
+</IfModule>
