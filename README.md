@@ -33,7 +33,7 @@ $server->handle();
 # Routing
 Is too easy to add routes and they are informed in controllers adding @url documentation tag 
 
-You need tell to Powerful API what are your routes (whatever you need). For this, edit api.php adding you controller's classes like this samples:
+You need tell to Powerful API what are your routes (whatever you need). To do this, add a @url documentation tag on your methods to tell for Powerful API what routes are allowed for this method, like in the sample:
 
 * Adding a GET route to /home
 ```php
