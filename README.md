@@ -1,13 +1,17 @@
 # PowerfulAPI
 A powerful and very light-weight PHP REST API Server
 
-A PHP REST server for providing a very light-weight REST API. Very easy to set up and get going. Independent from other libraries and frameworks. Supports HTTP authentication.
+A PHP REST server for providing a very light-weight REST API.
 
-Simple REST server in PHP
+*Very easy to set up and get going, you just need to copy files into working directory.
+*Independent from other libraries and frameworks.
+*Supports HTTP authentication.
 
-After building a couple of RESTful services using the Zend Framework, I decided to create a dead simple REST server that allowed me to skip all the features I didn’t need as well as a tons of classes that came with Zend Framework MVC. There are still useful features to add (XML support for example), but overall I’m quite happy with what I’ve come up with.
-
-My solution, RestServer, is a JSON REST server, so far. It should be trivial to add support for XML or other formats, but there would have to be assumptions on what your object would look like in XML (XML-RPC style, your own custom XML format, etc). First we’ll look at the classes that you write to handle the requests, then we’ll look at how to tie it together in your index.php file.
+Support the following formats :
+* text/plain
+* text/html
+* application/json
+* application/xml
 
 REST Controllers
 
