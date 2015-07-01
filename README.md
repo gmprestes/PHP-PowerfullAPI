@@ -15,7 +15,7 @@ Support the following formats :
 Just put files .htaccess and PowerfulAPI.php into directory that you'd like to work with API and enjoy it :)
 
 # Configuration
-You need tell to Powerful API where are your controller files (wherever they are). For this, edit api.php adding you controller's classes like in the sample:
+You need tell to Powerful API where are your controller files (wherever they are). For this, edit api.php adding your controller's classes like in the sample:
 
 ```php
 <?php
@@ -31,7 +31,7 @@ $server->addClass('Test2Controller');
 $server->handle();
 ```
 # Routing
-Is too easy to add routes and they are informed in controllers just adding a documentation tag --@url--
+Is too easy to add routes and they are informed in controllers adding @url documentation tag 
 
 You need tell to Powerful API where are your controller files (wherever they are). For this, edit api.php adding you controller's classes like this samples:
 
