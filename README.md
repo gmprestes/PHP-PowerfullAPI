@@ -15,7 +15,7 @@ Support the following formats :
 Just put files .htaccess and PowerfulAPI.php into directory that you'd like to work with API and enjoy it :)
 
 # Configuration
-You need to tell for Powerful API where are your controller files. For that edit api.php like this :
+You need tell to Powerful API where are your controller files. For this, edit api.php adding you controller's classes like in the sample:
 
 ```php
 <?php
@@ -33,7 +33,8 @@ $server->addClass('Test2Controller');
 $server->handle();
 ```
 
-add you controller classes 
+
+
 Authentication is unique for each application. But tying your authentication mechanisms into RestServer is easy. By simply adding a method named authorize to your Controller all requests will call that method first. If authorize() returns false, the server will issue a 401 Unauthorized response. If authorize() returns true, the request continues on to call the correct controller action. All actions will run the authorization first unless you add @noAuth in the action's docs (I usually put it above the @url mappings).
 
 Inside your authentication method you can use PHP's getallheaders function or $_COOKIE depending on how you want to authorize your users. This is where you would load the user object from your database, and set it to $this->user = getUserFromDatabase() so that your action will have access to it later when it gets called.
