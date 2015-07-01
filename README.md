@@ -1,11 +1,9 @@
 # PowerfulAPI
 A powerful and very light-weight PHP REST API Server
 
-A PHP REST server for providing a very light-weight REST API.
-
-*Very easy to set up and get going, you just need to copy files into working directory.
-*Independent from other libraries and frameworks.
-*Supports HTTP authentication.
+* Very easy to set up and get going, you just need to copy files into working directory.
+* Independent from other libraries and frameworks.
+* Supports HTTP authentication.
 
 Support the following formats :
 * text/plain
@@ -13,7 +11,8 @@ Support the following formats :
 * application/json
 * application/xml
 
-REST Controllers
+# Installation
+Just put .htaccess and PowerfulAPI.php files in directory that you want to work with API and drink a cup of coffe. :)
 
 The RestServer class assumes you are using URL rewriting and looks at the URL from the request to map to the necessary actions. The map that gets a request from URL to class method is all in the doc-comments of the classes. Here is an example of a class that would handle some user actions:
 
