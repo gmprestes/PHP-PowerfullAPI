@@ -61,7 +61,8 @@ Variable name can be whatever you want
 * Adding a POST route to /home/save
 ```php
     /**
-     * @url GET /home/save
+     * @url POST /home/save
+     * @noAuth
      */
     public function save()
     {
