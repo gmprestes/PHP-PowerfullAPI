@@ -1,5 +1,5 @@
 # PowerfulAPI 
-A powerful and very light-weight PHP REST API Server
+A powerful and very light-weight PHP REST API
 
 * Very easy to set up and get going, you just need to copy files into working directory.
 * Independent from other libraries and frameworks.
