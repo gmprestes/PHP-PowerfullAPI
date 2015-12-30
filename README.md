@@ -1,7 +1,7 @@
 # PowerfulAPI 
 An powerful and very light-weight PHP REST API
 
-* Very easy to set up and get going, you just need to copy PowerfulAPI files into working directory.
+* Very easy to set up and get going, you just need to copy PowerfulAPI files into your working directory.
 * Independent from other libraries and frameworks.
 * Supports HTTP authentication.
 
