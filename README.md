@@ -64,18 +64,72 @@ Variable name can be whatever you want
      * @url POST /home/save
      * @noAuth
      */
-    public function save()
+    public function save($data)
     {
-        $data = $_POST['XYZ']; 
+        $arg = $data->arg;
+        $arg2 = $data->arg2;
         // TO DO
         //Save data
     }
 ```
+
+You can get all posted data in the special variable $data. It's too easy.
+
 If you try access a method that not exist, API will return 404 - Not Found response.
 
 # Autentication
 
 By default, autentication is disabled, but you can enable it adding a method named authorize to your controller. All requests will call that method first. If authorize() returns false, the server will issue a 401 Unauthorized response. If authorize() returns true, the request continues on to call the correct controller action. All actions will run the authorization first unless you add @noAuth in the action's docs (I usually put it above the @url mappings).
+
+```php
+    /**
+     * @url POST /home/save
+     * @noAuth     <---------------- No autentication flag
+     */
+    public function save($data)
+    {
+       // CODE
+    }
+```
+
+To help you more, in .htaccess file, you can see this line :
+```php
+RewriteRule .? - [E=Authorization:%{HTTP:Authorization}]
+```
+
+This line add Authorization tag to your $_SERVER global variable, so you can send for exemple, this autorization tag in an JQuery ajax request 
+
+```javascript
+
+$.ajax({
+        type: "GET",
+        contentType: 'application/json; charset=utf-8',
+        dataType: "json",
+        url: '/api/getsomedata',
+        headers: {
+          'Authorization': 'Basic ' + YOUR_AUTENTICATION_TOKEN,
+        },
+      data: { // CODE }
+    }).done(function (msg) {
+        // CODE
+    });
+
+```
+
+and get it in Autorize() method in server 
+
+```php
+
+    function authorize()
+    {
+        if (isset($_SERVER["Authorization"]))
+          return true;
+        else
+          return false;
+    }
+
+```
+
 Inside your authentication method you can use PHP's getallheaders function or $_COOKIE depending on how you want to authorize your users.
 
 
