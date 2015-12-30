@@ -130,7 +130,7 @@ and get it in Autorize() method in server
 
 ```
 
-Inside your authentication method you can use PHP's getallheaders function or $_COOKIE depending on how you want to authorize your users.
+PS.: Inside your authentication method you can use PHP's getallheaders function or $_COOKIE depending on how you want to authorize your users.
 
 
 This project is forked from https://github.com/jacwright/RestServer created by Jacob Wright, but some modifications were made to improve it. 
