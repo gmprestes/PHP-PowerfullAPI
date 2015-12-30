@@ -3,8 +3,17 @@
 class TestController
 {
 
+  function authorize()
+  {
+      if (isset($_SERVER["Authorization"]))
+        return true;
+      else
+        return false;
+  }
+
     /**
      * @url GET /
+     * @noAuth
      */
     public function test()
     {

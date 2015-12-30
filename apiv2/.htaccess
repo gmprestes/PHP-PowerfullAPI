@@ -3,5 +3,6 @@
 DirectoryIndex index.php
 <IfModule mod_rewrite.c>
 	RewriteEngine On
+	RewriteRule .? - [E=Authorization:%{HTTP:Authorization}]
 	RewriteRule ^.*$ api.php [QSA,L]
 </IfModule>

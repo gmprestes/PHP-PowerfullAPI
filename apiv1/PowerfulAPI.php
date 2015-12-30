@@ -71,9 +71,9 @@ class PowerfulAPI
 
 	public function unauthorized($ask = false)
 	{
-		if ($ask) {
-			header("WWW-Authenticate: Basic realm=\"$this->realm\"");
-		}
+		//if ($ask) {
+			//header("WWW-Authenticate: Basic realm=\"$this->realm\"");
+		//}
 		throw new PowerfulAPIException(401, "You are not authorized to access this resource.");
 	}
 
