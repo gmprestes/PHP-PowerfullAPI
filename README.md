@@ -77,14 +77,14 @@ You can get all posted data in the special variable $data. It's too easy.
 
 If you try access a method that not exist, API will return 404 - Not Found response.
 
-# Autentication
+# Authentication
 
-By default, autentication is disabled, but you can enable it adding a method named authorize to your controller. All requests will call that method first. If authorize() returns false, the server will issue a 401 Unauthorized response. If authorize() returns true, the request continues on to call the correct controller action. All actions will run the authorization first unless you add @noAuth in the action's docs (I usually put it above the @url mappings).
+By default, authentication is disabled, but you can enable it adding a method named authorize to your controller. All requests will call that method first. If authorize() returns false, the server will issue a 401 Unauthorized response. If authorize() returns true, the request continues on to call the correct controller action. All actions will run authorize() first, unless you add @noAuth in the action's docs (I usually put it above the @url mappings).
 
 ```php
     /**
      * @url POST /home/save
-     * @noAuth     <---------------- No autentication flag
+     * @noAuth     <---------------- No authentication flag
      */
     public function save($data)
     {
@@ -97,7 +97,7 @@ To help you more, in .htaccess file, you can see this line :
 RewriteRule .? - [E=Authorization:%{HTTP:Authorization}]
 ```
 
-This line add Authorization tag to your $_SERVER global variable, so you can send for exemple, this autorization tag in an JQuery ajax request 
+This line add the tag Authorization to your $_SERVER global variable, so you can send this autorization tag in an JQuery ajax request 
 
 ```javascript
 
@@ -116,7 +116,7 @@ $.ajax({
 
 ```
 
-and get it in Autorize() method in server 
+and get it in Autorize() on server 
 
 ```php
 
