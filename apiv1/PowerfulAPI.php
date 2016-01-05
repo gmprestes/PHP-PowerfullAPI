@@ -47,9 +47,13 @@ class PowerfulAPI
 		$this->mode = $mode;
 		$this->realm = $realm;
 		$dir = dirname(str_replace($_SERVER['DOCUMENT_ROOT'], '', $_SERVER['SCRIPT_FILENAME']));
-		if ($dir == '.') $this->root = '/';
-		elseif (substr($dir, -1) != '/') $this->root = $dir . '/';
-		else $this->root = $dir;
+		if ($dir == '.')
+			$this->root = '/';
+		elseif (substr($dir, -1) != '/')
+			$this->root = $dir . '/';
+		else
+			$this->root = $dir;
+
 	}
 
 	public function  __destruct()
@@ -211,6 +215,7 @@ class PowerfulAPI
 
 		foreach ($urls as $url => $call) {
 			$args = $call[2];
+
 			if (!strstr($url, '$')) {
 				if (strcmp($url,$this->url) == 0) {
 					if (isset($args['data'])) {
@@ -298,11 +303,13 @@ class PowerfulAPI
 	{
 		$path = preg_replace('/\?.*$/', '', $_SERVER['REQUEST_URI']);
 
+
+
 	  // remove root from path
-		if ('/' . $this->root)
-			$path = str_replace('/' . $this->root,'',$path);
-		elseif ($this->root)
-				$path = str_replace($this->root,'',$path);
+		//if ('/' . $this->root)
+		$path = str_replace($this->root,'',$path);
+		//elseif ($this->root)
+		//$path = str_replace($this->root,'',$path);
 
 		// remove trailing format definition, like /controller/action.json -> /controller/action
 		$path = preg_replace('/\.(\w+)$/i', '', $path);
