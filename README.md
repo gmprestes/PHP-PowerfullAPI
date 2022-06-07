@@ -1,7 +1,7 @@
-# PowerfulAPI 
+# PowerfullAPI 
 An powerful and very light-weight PHP REST API
 
-* Very easy to set up and get going, you just need to copy PowerfulAPI files into your working directory.
+* Very easy to set up and get going, you just need to copy PowerfullAPI files into your working directory.
 * Independent from other libraries and frameworks.
 * Supports HTTP authentication.
 
@@ -15,7 +15,7 @@ Support the following formats :
 Just put files .htaccess and PowerfulAPI.php into directory that you'd like to work with API and enjoy it :)
 
 # Configuration
-You need tell to Powerful API where are your controller files (wherever they are). For this, edit api.php and add your controller's classes like in this sample:
+You need tell to PowerfullAPI where are your controller files (wherever they are). For this, edit api.php and add your controller's classes like in this sample:
 
 ```php
 <?php
